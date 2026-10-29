@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chính sách quyền riêng tư — MyDay</title>
+<meta name="description" content="Chính sách quyền riêng tư của ứng dụng MyDay: đếm ngày yêu và sổ tay cưới, dữ liệu lưu trên máy.">
+<style>
+:root { --bg: #fbf7f1; --ink: #3b2618; --muted: #7a6656; --accent: #b35c37; --rule: #e6dccf; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #1f1712; --ink: #f1e6da; --muted: #bba795; --accent: #e08a62; --rule: #3a2c22; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.65 -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { font-size: 1.9em; line-height: 1.25; margin: 0.4em 0 0.6em; }
+h2 { font-size: 1.3em; margin: 1.6em 0 0.5em; }
+h3 { font-size: 1.08em; margin: 1.3em 0 0.4em; }
+p, li { overflow-wrap: anywhere; }
+ul, ol { padding-left: 1.4em; }
+li { margin: 0.25em 0; }
+a { color: var(--accent); }
+code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.9em; background: var(--rule); padding: 0.05em 0.35em; border-radius: 4px; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2em 0; }
+em { color: var(--muted); }
+footer { margin-top: 3em; color: var(--muted); font-size: 0.9em; }
+</style>
+</head>
+<body>
+<main>
+<h1>Chính sách quyền riêng tư — MyDay</h1>
+<p><em>Cập nhật lần cuối: 29 tháng 10, 2026</em></p>
+<p><em>Phiên bản áp dụng: MyDay 2.1.0 trở lên</em></p>
+<p>MyDay ("chúng tôi", "ứng dụng") là ứng dụng sổ tay cưới và đếm ngày yêu dành cho các cặp đôi và gia đình, hoạt động trên các nền tảng Android và iOS. Chúng tôi tôn trọng tuyệt đối quyền riêng tư của bạn và cam kết bảo vệ dữ liệu cá nhân theo nguyên tắc <strong>offline-first / local-first (ưu tiên cục bộ)</strong>: mọi thông tin bạn nhập đều thuộc quyền sở hữu của bạn và được lưu trữ trên thiết bị của bạn.</p>
+<hr>
+<h2>1. Nguyên tắc cốt lõi: Bảo vệ dữ liệu cá nhân (Data Privacy by Design)</h2>
+<ul><li><strong>Lưu trữ cục bộ ưu tiên (Local-first):</strong> Toàn bộ thông tin cá nhân (họ tên cặp đôi, ngày bắt đầu yêu, ngày cưới, ảnh kỷ niệm, danh sách khách mời, sổ mừng, việc cần làm, ghi chú) đều được lưu trữ trực tiếp trong bộ nhớ riêng của ứng dụng trên thiết bị (cơ sở dữ liệu Room/SQLite nội bộ).
+</li><li><strong>Không máy chủ theo dõi (No Backend, No Tracking):</strong> Nhà phát triển không vận hành bất kỳ máy chủ lưu trữ dữ liệu người dùng nào, không sử dụng dịch vụ phân tích hành vi (Analytics) hay các thư viện theo dõi của bên thứ ba (Tracking SDKs). Ngoại lệ duy nhất là trình quét mã QR do Google Play services cung cấp, có thể gửi dữ liệu chẩn đoán cho Google (xem Mục 3).
+</li><li><strong>Không quảng cáo (No Ads):</strong> MyDay không tích hợp mạng quảng cáo, không chia sẻ dữ liệu người dùng cho bất kỳ nhà quảng cáo hay bên thứ ba nào.
+</li><li><strong>Mạng cục bộ có kiểm soát:</strong> Kết nối mạng (<code>INTERNET</code>) chỉ được sử dụng duy nhất cho tính năng đồng bộ trực tiếp giữa hai thiết bị (P2P Wi-Fi Sync) trên cùng một mạng Wi-Fi cục bộ do chính bạn khởi xướng. Bản thân MyDay không thực hiện kết nối nào ra mạng Internet công cộng. Riêng trình quét mã QR của Google Play services có thể tự gửi dữ liệu chẩn đoán cho Google (xem Mục 3).
+</li></ul>
+<hr>
+<h2>2. Ghép đôi và Đồng bộ giữa hai máy (Pairing &amp; Sync)</h2>
+<p>MyDay cung cấp hai cơ chế an toàn để cặp đôi đồng bộ kỷ niệm cùng nhau mà không cần tài khoản máy chủ:</p>
+<h3>a. Ghép đôi qua mã QR / Mã ghép đôi (Pairing Code)</h3>
+<ul><li><strong>Nội dung mã ghép đôi:</strong> Mã chỉ chứa thông tin hồ sơ cơ bản để hai máy nhận diện nhau gồm: mã định danh ngẫu nhiên của cặp đôi (<code>pairId</code>), tên hai bạn, ngày bắt đầu yêu, ngày cưới và danh sách các ngày kỷ niệm đặc biệt.
+</li><li><strong>Bảo mật tuyệt đối:</strong> Mã ghép đôi <strong>không bao giờ</strong> chứa mật khẩu, mã PIN, danh bạ khách mời hay sổ mừng tiền cưới. Mã <code>pairId</code> chỉ là định danh phiên làm việc và không đóng vai trò thông tin xác thực nhạy cảm.
+</li><li><strong>Trình quét mã QR:</strong> Trên thiết bị Android, trình quét mã QR được cung cấp trực tiếp bởi dịch vụ hệ thống Google Play services (Google Code Scanner); hình ảnh camera được xử lý hoàn toàn trên thiết bị và MyDay không cần yêu cầu quyền truy cập máy ảnh của bạn.
+</li></ul>
+<h3>b. Gói kỷ niệm ngoại tuyến (<code>.myday</code> Bundle)</h3>
+<ul><li><strong>Nội dung gói:</strong> Khi bạn xuất gói kỷ niệm để gửi cho người ấy qua các ứng dụng tin nhắn (Zalo, Messenger, AirDrop, Nearby Share), gói chỉ chứa: bài viết kỷ niệm, hình ảnh gắn kèm, các ngày đặc biệt và thông tin hồ sơ.
+</li><li><strong>Không chia sẻ thông tin riêng tư khác:</strong> Danh sách khách mời cưới, sổ mừng (tiền mừng cưới), ghi chú cá nhân và ngân sách chi tiêu cưới <strong>hoàn toàn không được đưa vào gói <code>.myday</code></strong>.
+</li><li><strong>Không mã hóa tệp:</strong> Gói dữ liệu <code>.myday</code> là tệp nén tiêu chuẩn và <strong>không được mã hóa</strong> bởi ứng dụng; mức độ bảo mật trong quá trình truyền tải phụ thuộc hoàn toàn vào kênh gửi và ứng dụng bên thứ ba (ứng dụng nhắn tin, email) mà bạn lựa chọn sử dụng.
+</li></ul>
+<h3>c. Đồng bộ trực tiếp qua Wi-Fi khi ở cạnh nhau (Nearby P2P Sync)</h3>
+<ul><li><strong>Kết nối trực tiếp:</strong> Hai máy kết nối trực tiếp với nhau thông qua mạng Wi-Fi nội bộ hoặc Điểm phát sóng di động (Hotspot) cá nhân. Không đi qua bất kỳ máy chủ trung gian hay dịch vụ đám mây nào.
+</li><li><strong>Mã hóa đầu cuối:</strong> Khác với gói tệp <code>.myday</code>, phiên truyền dữ liệu trực tiếp qua Wi-Fi được bảo vệ bằng mã QR quét trực tiếp, chứa khóa phiên dùng một lần (one-time ephemeral token). Dữ liệu được chia thành các khối 64KB và mã hóa đầu cuối bằng thuật toán <strong>AES-256-GCM</strong>.
+</li><li><strong>Hoàn tác an toàn:</strong> Sau mỗi lần gộp kỷ niệm, ứng dụng tự động lưu lại bản sao lưu cục bộ và cho phép bạn hoàn tác trong vòng 24 giờ nếu chưa có chỉnh sửa mới.
+</li></ul>
+<hr>
+<h2>3. Dịch vụ bên thứ ba: Google Code Scanner (chỉ trên Android)</h2>
+<p>Để quét mã QR khi ghép đôi và đồng bộ, MyDay dùng Google Code Scanner, một thành phần của Google ML Kit chạy qua Google Play services.</p>
+<ul><li>Việc nhận diện mã QR diễn ra trên thiết bị. Google không lưu ảnh camera hay nội dung mã QR.
+</li><li>Theo tài liệu của Google, thành phần này có thể tự động gửi cho Google qua kết nối mã hóa HTTPS:
+<ul><li>thông tin thiết bị (hãng, đời máy, phiên bản hệ điều hành) và thông tin ứng dụng (tên gói, phiên bản), để chẩn đoán lỗi và đo hiệu năng;
+</li><li>một mã phiên tạm thời, mức thu phóng camera và vị trí khung mã QR trong lúc quét, khi tính năng tự thu phóng được bật.
+</li></ul>
+</li><li>Dữ liệu này không gắn với danh tính của bạn, và MyDay không nhận được dữ liệu này.
+</li><li>Tìm hiểu thêm: <a href="https://developers.google.com/ml-kit/android-data-disclosure">Google ML Kit — Data disclosure</a> và <a href="https://policies.google.com/privacy">Chính sách quyền riêng tư của Google</a>.
+</li></ul>
+<hr>
+<h2>4. Quyền hạn ứng dụng yêu cầu và mục đích sử dụng</h2>
+<p>MyDay chỉ yêu cầu các quyền hệ thống tối thiểu cần thiết để cung cấp các tính năng bạn chủ động lựa chọn:</p>
+<h3>a. Kết nối mạng cục bộ (<code>INTERNET</code> &amp; <code>ACCESS_NETWORK_STATE</code>)</h3>
+<ul><li><strong>Mục đích:</strong> Hỗ trợ tính năng Đồng bộ khi ở cạnh nhau qua mạng Wi-Fi cục bộ (P2P Nearby Sync).
+</li><li><strong>Cam kết an toàn:</strong> Quyền <code>INTERNET</code> chỉ kích hoạt máy chủ HTTP nội bộ nhúng (Ktor) để nhận kết nối từ máy của bạn đời trong cùng mạng Wi-Fi. Ứng dụng không gửi bất kỳ dữ liệu nào ra máy chủ bên ngoài. Quyền <code>ACCESS_NETWORK_STATE</code> chỉ dùng để kiểm tra mạng Wi-Fi và hiển thị địa chỉ IP nội bộ cho mã QR kết nối.
+</li></ul>
+<h3>b. Đọc danh bạ (<code>READ_CONTACTS</code>) — Chỉ trên Android</h3>
+<ul><li><strong>Mục đích:</strong> Hỗ trợ tính năng "Nhập từ danh bạ" trong màn hình Sổ khách.
+</li><li><strong>Cách thức hoạt động:</strong> Quyền này chỉ được kích hoạt khi bạn chủ động bấm vào nút "Chọn từ danh bạ". MyDay chỉ đọc danh bạ để bạn chọn những người bạn muốn mời cưới và lưu tên/số điện thoại của những người đó vào sổ khách của bạn. Ứng dụng <strong>tuyệt đối không tải lên</strong>, không đồng bộ danh bạ ra ngoài thiết bị và không đọc dữ liệu của những liên hệ bạn không chọn.
+</li></ul>
+<h3>c. Thông báo (<code>POST_NOTIFICATIONS</code>)</h3>
+<ul><li><strong>Mục đích:</strong> Gửi thông báo nhắc nhở kỷ niệm ngày yêu hoặc các sự kiện cưới (ăn hỏi, lễ cưới, tiệc mừng) vào 08:00 sáng.
+</li><li><strong>Cách thức hoạt động:</strong> Toàn bộ lịch nhắc nhở được đặt và xử lý cục bộ trên thiết bị qua hệ thống báo thức/WorkManager của hệ điều hành (<code>AlarmManager</code> / <code>UNUserNotificationCenter</code>). Không có dịch vụ push notification qua mạng từ máy chủ ngoài.
+</li></ul>
+<h3>d. Khởi động lại hệ thống (<code>RECEIVE_BOOT_COMPLETED</code>)</h3>
+<ul><li><strong>Mục đích:</strong> Đặt lại lịch thông báo cục bộ và cập nhật tiện ích màn hình chính (Widget) sau khi thiết bị khởi động lại hoặc thay đổi múi giờ/ngày hệ thống.
+</li></ul>
+<h3>e. Chọn ảnh đại diện và kỷ niệm (Photo Picker)</h3>
+<ul><li><strong>Mục đích:</strong> Cho phép bạn chọn ảnh đại diện cặp đôi hoặc gắn ảnh vào các khoảnh khắc kỷ niệm.
+</li><li><strong>Cách thức hoạt động:</strong> MyDay sử dụng bộ chọn ảnh chuẩn của hệ điều hành (Android Photo Picker / iOS Photos Picker). Ứng dụng <strong>không yêu cầu quyền đọc toàn bộ kho ảnh</strong> (<code>READ_MEDIA_IMAGES</code> / <code>READ_EXTERNAL_STORAGE</code>) mà chỉ truy cập được các tệp ảnh bạn đã chủ động chọn. Ảnh được lưu vào thư mục riêng biệt của ứng dụng trên thiết bị.
+</li></ul>
+<h3>f. Khóa bảo vệ và Sinh trắc học (Biometrics)</h3>
+<ul><li><strong>Mục đích:</strong> Bảo vệ quyền riêng tư cho các thông tin nhật ký, kỷ niệm và sổ mừng qua mã PIN hoặc sinh trắc học (vân tay, khuôn mặt).
+</li><li><strong>Cách thức hoạt động:</strong> Xác thực sinh trắc học được xử lý hoàn toàn bởi hệ điều hành thiết bị (<code>BiometricPrompt</code> trên Android, <code>LocalAuthentication</code> trên iOS). Ứng dụng không thu thập, không lưu trữ và không thể truy cập dữ liệu sinh trắc học của bạn.
+</li></ul>
+<hr>
+<h2>5. Sao lưu và Khôi phục dữ liệu</h2>
+<ul><li><strong>Sao lưu thủ công:</strong> Bạn có toàn quyền xuất bản sao lưu dữ liệu của mình dưới dạng tệp nén (<code>.zip</code>) hoặc tệp <code>.json</code> (chứa cơ sở dữ liệu và hình ảnh). Bạn tự quyết định nơi lưu trữ tệp sao lưu này (bộ nhớ trong máy, thẻ nhớ, gửi qua tin nhắn cho bạn đời hoặc tải lên Google Drive cá nhân).
+</li><li><strong>Tự động sao lưu hệ thống (Android Auto Backup):</strong> Để bảo vệ dữ liệu khi đổi máy, cơ sở dữ liệu văn bản được cấu hình đồng bộ cùng tài khoản Google của bạn theo cơ chế Auto Backup của Android. Để tiết kiệm dung lượng lưu trữ của bạn, tệp ảnh lưu trong thư mục <code>photos/</code> được loại trừ khỏi Auto Backup và chỉ được sao lưu khi bạn xuất tệp zip thủ công.
+</li></ul>
+<hr>
+<h2>6. Quyền kiểm soát và Xóa dữ liệu của người dùng</h2>
+<ul><li>Bạn có toàn quyền sửa, xóa bất kỳ mục dữ liệu nào (khách mời, phong bì, mốc kỷ niệm, ảnh) bất cứ lúc nào trong ứng dụng.
+</li><li><strong>Xóa toàn bộ dữ liệu:</strong> Vào <strong>Cài đặt &gt; Bắt đầu lại</strong>, chọn <strong>Xóa toàn bộ kể cả ảnh</strong> rồi gõ "XÓA" để xác nhận. Ứng dụng xóa ngay toàn bộ cơ sở dữ liệu, cài đặt, mã PIN và tệp ảnh trên máy.
+</li><li><strong>Gỡ cài đặt:</strong> Khi bạn gỡ cài đặt MyDay khỏi thiết bị, toàn bộ dữ liệu nằm trong bộ nhớ riêng của ứng dụng sẽ được hệ điều hành xóa hoàn toàn.
+</li></ul>
+<hr>
+<h2>7. Thay đổi đối với Chính sách quyền riêng tư</h2>
+<p>Chúng tôi có thể cập nhật Chính sách quyền riêng tư này khi phát hành các phiên bản mới bổ sung tính năng. Mọi thay đổi sẽ luôn tuân thủ nguyên tắc tôn trọng quyền riêng tư và dữ liệu cục bộ của người dùng, đồng thời được ghi chú rõ ràng trong mục ghi chú phát hành (Release Notes).</p>
+<hr>
+<h2>8. Liên hệ</h2>
+<p>Nếu bạn có bất kỳ câu hỏi hoặc góp ý nào về chính sách quyền riêng tư của MyDay, vui lòng liên hệ:</p>
+<ul><li><strong>Email:</strong> wacteam.lab@gmail.com
+</li><li><strong>Dự án:</strong> MyDay — Sổ tay cưới &amp; Đếm ngày yêu
+</li></ul>
+<hr>
+<h1>Privacy Policy (English Summary)</h1>
+<p><em>Last updated: October 29, 2026</em></p>
+<p><em>Applicable Version: MyDay 2.1.0+</em></p>
+<p>MyDay ("we", "the app") is a local-first / offline-first mobile app for couples and families (Android &amp; iOS). We are committed to protecting your privacy.</p>
+<ol><li><strong>Local-First Architecture &amp; No Data Collection:</strong>
+<ul><li>All your data (couple profile, love counter, memories, photos, guest list, gift ledger, tasks) is stored locally on your device.
+</li><li>We operate no cloud backends, developer servers, analytics, or tracking SDKs, and show no advertisements. The only exception is the Google Code Scanner (see below).
+</li><li>Network permissions (<code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>) are strictly used for direct peer-to-peer (P2P) sync between the couple's two devices on the same local Wi-Fi network; no outbound traffic is sent to developer or public servers.
+</li></ul>
+</li><li><strong>Pairing &amp; Peer-to-Peer Sync:</strong>
+<ul><li><strong>Pairing Code / QR:</strong> Contains only essential couple profile info (<code>pairId</code>, names, started/wedding dates, special dates). Contains no passwords, PINs, guest lists, or financial data. On Android, QR code scanning is powered directly by Google Play services (Google Code Scanner); camera frames are processed entirely on-device without requiring camera permissions.
+</li><li><strong>Offline <code>.myday</code> Bundle:</strong> Bundles memories, photos, and special dates for user-initiated sharing via system share sheets. Guest lists and gift ledgers are strictly excluded. The <code>.myday</code> bundle is a standard unencrypted zip archive; transmission security depends entirely on the third-party channel (messaging app, email, or nearby sharing) you select.
+</li><li><strong>Google Code Scanner (Android only):</strong> QR recognition runs on-device through Google Play services. Per Google's ML Kit documentation, it may send Google device and app info for diagnostics and, with auto-zoom, a temporary session ID, zoom changes and the QR bounding box, over HTTPS. This data is not linked to your identity and is not received by MyDay.
+</li><li><strong>Nearby Wi-Fi Sync:</strong> Direct P2P connection via embedded local Ktor server over local Wi-Fi or mobile hotspot. Unlike <code>.myday</code> bundles, Wi-Fi sync data is encrypted end-to-end with <strong>AES-256-GCM</strong> using a one-time session token exchanged via QR code.
+</li></ul>
+</li><li><strong>Permissions:</strong>
+<ul><li><strong>Local Network (<code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>):</strong> Used solely for local Wi-Fi P2P synchronization directly between the two partners.
+</li><li><strong>Contacts (<code>READ_CONTACTS</code>):</strong> Used solely when you tap "Import from Contacts" to invite wedding guests. No contacts are uploaded or synced.
+</li><li><strong>Notifications (<code>POST_NOTIFICATIONS</code>):</strong> Schedules local reminders at 08:00 AM for anniversaries and wedding milestones via local alarms.
+</li><li><strong>Boot Completed (<code>RECEIVE_BOOT_COMPLETED</code>):</strong> Restores local reminders and home screen widgets upon device reboot.
+</li><li><strong>Photos:</strong> Accessed exclusively via the system Photo Picker; no broad storage permission is requested.
+</li><li><strong>Biometrics:</strong> Authenticates app access locally via system <code>BiometricPrompt</code> / <code>LocalAuthentication</code>.
+</li></ul>
+</li><li><strong>Backup &amp; Data Deletion:</strong>
+<ul><li>Manual backup exports to a <code>.zip</code> archive (database + photos) or <code>.json</code> file that you control.
+</li><li>Android Auto Backup synchronizes the text database with your private Google Drive account (photos are strictly excluded).
+</li><li>You can completely wipe all local data anytime via <strong>Settings &gt; Bắt đầu lại &gt; Xóa toàn bộ kể cả ảnh</strong> or by uninstalling the application.
+</li></ul>
+</li><li><strong>Contact:</strong> wacteam.lab@gmail.com
+</li></ol>
+<footer>WAC Labs · <a href="../../">Các ứng dụng khác</a></footer>
+</main>
+</body>
+</html>
