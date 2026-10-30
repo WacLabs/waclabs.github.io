@@ -29,13 +29,14 @@ footer { margin-top: 3em; color: var(--muted); font-size: 0.9em; }
 <body>
 <main>
 <h1>Chính sách quyền riêng tư — MyDay</h1>
-<p><em>Cập nhật lần cuối: 29 tháng 10, 2026</em></p>
+<p><em>Cập nhật lần cuối: 30 tháng 10, 2026</em></p>
 <p><em>Phiên bản áp dụng: MyDay 2.1.0 trở lên</em></p>
 <p>MyDay ("chúng tôi", "ứng dụng") là ứng dụng sổ tay cưới và đếm ngày yêu dành cho các cặp đôi và gia đình, hoạt động trên các nền tảng Android và iOS. Chúng tôi tôn trọng tuyệt đối quyền riêng tư của bạn và cam kết bảo vệ dữ liệu cá nhân theo nguyên tắc <strong>offline-first / local-first (ưu tiên cục bộ)</strong>: mọi thông tin bạn nhập đều thuộc quyền sở hữu của bạn và được lưu trữ trên thiết bị của bạn.</p>
 <hr>
 <h2>1. Nguyên tắc cốt lõi: Bảo vệ dữ liệu cá nhân (Data Privacy by Design)</h2>
-<ul><li><strong>Lưu trữ cục bộ ưu tiên (Local-first):</strong> Toàn bộ thông tin cá nhân (họ tên cặp đôi, ngày bắt đầu yêu, ngày cưới, ảnh kỷ niệm, danh sách khách mời, sổ mừng, việc cần làm, ghi chú) đều được lưu trữ trực tiếp trong bộ nhớ riêng của ứng dụng trên thiết bị (cơ sở dữ liệu Room/SQLite nội bộ).
+<ul><li><strong>Lưu trữ cục bộ ưu tiên (Local-first):</strong> Toàn bộ thông tin cá nhân (họ tên cặp đôi, ngày bắt đầu yêu, ngày cưới, ảnh kỷ niệm, danh sách khách mời, sổ mừng, số tài khoản ngân hàng nhận mừng cưới, việc cần làm, ghi chú) đều được lưu trữ trực tiếp trong bộ nhớ riêng của ứng dụng trên thiết bị (cơ sở dữ liệu Room/SQLite nội bộ). Số tài khoản nhận mừng chỉ dùng để ứng dụng tự tạo mã ảnh VietQR tĩnh tại bàn lễ tân hoặc đính kèm lời mời; MyDay tuyệt đối không kết nối với bất kỳ ngân hàng hay cổng thanh toán nào.
 </li><li><strong>Không máy chủ theo dõi (No Backend, No Tracking):</strong> Nhà phát triển không vận hành bất kỳ máy chủ lưu trữ dữ liệu người dùng nào, không sử dụng dịch vụ phân tích hành vi (Analytics) hay các thư viện theo dõi của bên thứ ba (Tracking SDKs). Ngoại lệ duy nhất là trình quét mã QR do Google Play services cung cấp, có thể gửi dữ liệu chẩn đoán cho Google (xem Mục 3).
+</li><li><strong>Góp ý và khảo sát do bạn tự gửi:</strong> Hàng <strong>Cài đặt &gt; Góp ý cho MyDay</strong> và thẻ khảo sát một câu trên màn Hôm nay chỉ mở ứng dụng email trên máy của bạn với thư soạn sẵn gửi tới <code>wacteam.lab@gmail.com</code>. Thư góp ý điền sẵn phiên bản ứng dụng, đời máy và phiên bản hệ điều hành; thư khảo sát chỉ gồm câu trả lời bạn chọn và phiên bản ứng dụng. Bạn xem, sửa và tự quyết định có bấm gửi hay không; MyDay không tự gửi gì. Khi bạn gửi, chúng tôi nhận được địa chỉ email của bạn và chỉ dùng để đọc, trả lời góp ý, không dùng cho quảng cáo và không chia sẻ cho ai. Ứng dụng chỉ lưu trên máy một cờ "đã trả lời" để không hỏi lại.
 </li><li><strong>Không quảng cáo (No Ads):</strong> MyDay không tích hợp mạng quảng cáo, không chia sẻ dữ liệu người dùng cho bất kỳ nhà quảng cáo hay bên thứ ba nào.
 </li><li><strong>Mạng cục bộ có kiểm soát:</strong> Kết nối mạng (<code>INTERNET</code>) chỉ được sử dụng duy nhất cho tính năng đồng bộ trực tiếp giữa hai thiết bị (P2P Wi-Fi Sync) trên cùng một mạng Wi-Fi cục bộ do chính bạn khởi xướng. Bản thân MyDay không thực hiện kết nối nào ra mạng Internet công cộng. Riêng trình quét mã QR của Google Play services có thể tự gửi dữ liệu chẩn đoán cho Google (xem Mục 3).
 </li></ul>
@@ -49,7 +50,7 @@ footer { margin-top: 3em; color: var(--muted); font-size: 0.9em; }
 </li></ul>
 <h3>b. Gói kỷ niệm ngoại tuyến (<code>.myday</code> Bundle)</h3>
 <ul><li><strong>Nội dung gói:</strong> Khi bạn xuất gói kỷ niệm để gửi cho người ấy qua các ứng dụng tin nhắn (Zalo, Messenger, AirDrop, Nearby Share), gói chỉ chứa: bài viết kỷ niệm, hình ảnh gắn kèm, các ngày đặc biệt và thông tin hồ sơ.
-</li><li><strong>Không chia sẻ thông tin riêng tư khác:</strong> Danh sách khách mời cưới, sổ mừng (tiền mừng cưới), ghi chú cá nhân và ngân sách chi tiêu cưới <strong>hoàn toàn không được đưa vào gói <code>.myday</code></strong>.
+</li><li><strong>Không chia sẻ thông tin riêng tư khác:</strong> Danh sách khách mời cưới, sổ mừng (tiền mừng cưới), số tài khoản nhận mừng (<code>gift_account</code>), ghi chú cá nhân và ngân sách chi tiêu cưới <strong>hoàn toàn không được đưa vào gói <code>.myday</code> hay đồng bộ qua Wi-Fi giữa hai máy</strong> (chỉ nằm trên thiết bị và bản sao lưu thủ công của bạn).
 </li><li><strong>Không mã hóa tệp:</strong> Gói dữ liệu <code>.myday</code> là tệp nén tiêu chuẩn và <strong>không được mã hóa</strong> bởi ứng dụng; mức độ bảo mật trong quá trình truyền tải phụ thuộc hoàn toàn vào kênh gửi và ứng dụng bên thứ ba (ứng dụng nhắn tin, email) mà bạn lựa chọn sử dụng.
 </li></ul>
 <h3>c. Đồng bộ trực tiếp qua Wi-Fi khi ở cạnh nhau (Nearby P2P Sync)</h3>
@@ -116,12 +117,13 @@ footer { margin-top: 3em; color: var(--muted); font-size: 0.9em; }
 </li></ul>
 <hr>
 <h1>Privacy Policy (English Summary)</h1>
-<p><em>Last updated: October 29, 2026</em></p>
+<p><em>Last updated: October 30, 2026</em></p>
 <p><em>Applicable Version: MyDay 2.1.0+</em></p>
 <p>MyDay ("we", "the app") is a local-first / offline-first mobile app for couples and families (Android &amp; iOS). We are committed to protecting your privacy.</p>
 <ol><li><strong>Local-First Architecture &amp; No Data Collection:</strong>
 <ul><li>All your data (couple profile, love counter, memories, photos, guest list, gift ledger, tasks) is stored locally on your device.
 </li><li>We operate no cloud backends, developer servers, analytics, or tracking SDKs, and show no advertisements. The only exception is the Google Code Scanner (see below).
+</li><li>Feedback and the one-question survey only open your own email app with a prefilled draft to wacteam.lab@gmail.com (feedback: app version, device model and OS version; survey: your chosen answer and app version). You review it and decide whether to send. We use your email address only to read and reply to your message.
 </li><li>Network permissions (<code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>) are strictly used for direct peer-to-peer (P2P) sync between the couple's two devices on the same local Wi-Fi network; no outbound traffic is sent to developer or public servers.
 </li></ul>
 </li><li><strong>Pairing &amp; Peer-to-Peer Sync:</strong>
