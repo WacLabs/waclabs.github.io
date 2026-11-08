@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "baseUrl": "https://waclabs.github.io/vocalremover/backgrounds/",
+  "videos": [
+    {
+      "id": "beams",
+      "title": {
+        "en": "Stage beams",
+        "vi": "Đèn sân khấu",
+        "de": "Bühnenlicht",
+        "es": "Luces de escenario",
+        "fr": "Faisceaux de scène",
+        "ar": "أضواء المسرح",
+        "hi": "स्टेज लाइट्स",
+        "ko": "무대 조명"
+      },
+      "thumb": "thumbs/beams.jpg",
+      "url": "videos/beams.mp4",
+      "durationSec": 12,
+      "bytes": 645101,
+      "sha256": "e1d78c51b378e0a01d6587079d4f4b1e6031c1e9400b3685ecfca87a318c828b"
+    },
+    {
+      "id": "aurora",
+      "title": {
+        "en": "Aurora",
+        "vi": "Cực quang",
+        "de": "Polarlicht",
+        "es": "Aurora",
+        "fr": "Aurore",
+        "ar": "الشفق القطبي",
+        "hi": "ध्रुवीय ज्योति",
+        "ko": "오로라"
+      },
+      "thumb": "thumbs/aurora.jpg",
+      "url": "videos/aurora.mp4",
+      "durationSec": 12,
+      "bytes": 1317381,
+      "sha256": "25c1bbf6a5f14071815beb1a8f64f123778d13cc7a3660b2fd0b8729e6fc01a3"
+    },
+    {
+      "id": "synthwave",
+      "title": {
+        "en": "Synthwave",
+        "vi": "Synthwave",
+        "de": "Synthwave",
+        "es": "Synthwave",
+        "fr": "Synthwave",
+        "ar": "سينث ويف",
+        "hi": "सिंथवेव",
+        "ko": "신스웨이브"
+      },
+      "thumb": "thumbs/synthwave.jpg",
+      "url": "videos/synthwave.mp4",
+      "durationSec": 12,
+      "bytes": 976991,
+      "sha256": "abf4e9ac87ed63d2e1ae3e6d2ff3b0c5ee2a819c02a92c49914b6f9276ce4d83"
+    },
+    {
+      "id": "glitter",
+      "title": {
+        "en": "Gold glitter",
+        "vi": "Kim tuyến vàng",
+        "de": "Goldglitzer",
+        "es": "Brillo dorado",
+        "fr": "Paillettes dorées",
+        "ar": "بريق ذهبي",
+        "hi": "सुनहरी चमक",
+        "ko": "골드 글리터"
+      },
+      "thumb": "thumbs/glitter.jpg",
+      "url": "videos/glitter.mp4",
+      "durationSec": 12,
+      "bytes": 560002,
+      "sha256": "c0bf97013d10b603aaa8205af27a0b7e476584395de39aadb58a04b608f44684"
+    },
+    {
+      "id": "galaxy",
+      "title": {
+        "en": "Galaxy",
+        "vi": "Thiên hà",
+        "de": "Galaxie",
+        "es": "Galaxia",
+        "fr": "Galaxie",
+        "ar": "مجرة",
+        "hi": "आकाशगंगा",
+        "ko": "은하수"
+      },
+      "thumb": "thumbs/galaxy.jpg",
+      "url": "videos/galaxy.mp4",
+      "durationSec": 12,
+      "bytes": 870004,
+      "sha256": "d066ab896e083ad743000475799d69c158cbdc0c17e18cbc8033804c1fd8a803"
+    },
+    {
+      "id": "city",
+      "title": {
+        "en": "City rain",
+        "vi": "Phố đêm mưa",
+        "de": "Stadtregen",
+        "es": "Lluvia en la ciudad",
+        "fr": "Pluie en ville",
+        "ar": "مطر المدينة",
+        "hi": "शहर की बारिश",
+        "ko": "비 오는 도시"
+      },
+      "thumb": "thumbs/city.jpg",
+      "url": "videos/city.mp4",
+      "durationSec": 12,
+      "bytes": 1995990,
+      "sha256": "57bab466757854f2dc64236059c2f245b40df96d027f19e2c8d1b260d0f7cdb3"
+    }
+  ]
+}
